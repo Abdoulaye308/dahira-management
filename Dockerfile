@@ -9,4 +9,4 @@ RUN ./mvnw clean package -DskipTests
 
 EXPOSE 10000
 
-CMD ["java", "-jar", "target/demo-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-Xms128m", "-Xmx384m", "-XX:MaxMetaspaceSize=128m", "-jar", "target/demo-0.0.1-SNAPSHOT.jar"]
