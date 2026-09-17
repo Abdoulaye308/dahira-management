@@ -1,0 +1,285 @@
+/* Members.css — identité visuelle Dahira Hisnoul Abraar (vert profond / or) */
+
+:root {
+  --green-deep: #0B3D2E;
+  --green-mid: #12513D;
+  --gold: #C9A227;
+  --gold-light: #E8CE84;
+  --gold-soft: #F5E9C7;
+  --cream: #FBF8F1;
+  --ink: #1C2420;
+  --stone: #707C74;
+  --danger: #A3402E;
+}
+
+/* ---------- En-tête ---------- */
+.mb-hero {
+  position: relative;
+  background: linear-gradient(160deg, var(--green-deep) 0%, var(--green-mid) 100%);
+  color: var(--cream);
+  padding: 34px 40px;
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.mb-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .10;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='90' viewBox='0 0 120 90'%3E%3Cpath d='M60 0 C60 30 30 30 30 55 C30 75 45 88 60 90 C75 88 90 75 90 55 C90 30 60 30 60 0Z' fill='none' stroke='%23E8CE84' stroke-width='1.4'/%3E%3C/svg%3E");
+  background-size: 120px 90px;
+}
+.mb-hero-title { position: relative; font-family: 'Amiri', serif; font-weight: 700; font-size: 30px; margin: 0 0 4px; }
+.mb-hero-sub { position: relative; margin: 0; color: var(--gold-light); font-size: 14px; }
+
+.mb-hero-actions {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.mb-btn-new {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold);
+  color: var(--green-deep);
+  border: none;
+  font-weight: 600;
+  font-size: 14.5px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .15s ease;
+}
+.mb-btn-new:hover { background: var(--gold-light); }
+
+.mb-hero-actions {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.mb-btn-pdf {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(251,248,241,.12);
+  color: var(--cream);
+  border: 1px solid rgba(251,248,241,.3);
+  font-weight: 600;
+  font-size: 14.5px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .15s ease;
+}
+.mb-btn-pdf:hover { background: rgba(251,248,241,.2); }
+
+.mb-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(251,248,241,.1);
+  color: var(--cream);
+  border: 1px solid rgba(251,248,241,.35);
+  font-weight: 600;
+  font-size: 14.5px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .15s ease;
+}
+.mb-btn-outline:hover { background: rgba(251,248,241,.18); }
+
+/* ---------- Alerte ---------- */
+.mb-alert {
+  background: #FBEAE6;
+  color: var(--danger);
+  border: 1px solid #EBC7BC;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* ---------- Panneau / carte ---------- */
+.mb-panel {
+  background: var(--surface, #fff);
+  border: 1px solid var(--border-strong, #E9E4D4);
+  border-radius: 16px;
+  padding: 26px;
+}
+
+/* ---------- Filtres ---------- */
+.mb-filters { display: flex; gap: 14px; margin-bottom: 22px; flex-wrap: wrap; }
+.mb-search {
+  flex: 1;
+  min-width: 240px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border, #DDD5BC);
+  border-radius: 10px;
+  padding: 10px 14px;
+  background: var(--input-bg, var(--cream));
+}
+.mb-search i { color: var(--stone); }
+.mb-search input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+}
+.mb-select {
+  border: 1px solid var(--border, #DDD5BC);
+  border-radius: 10px;
+  padding: 10px 14px;
+  background: var(--input-bg, var(--cream));
+  font-size: 14px;
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  min-width: 170px;
+}
+.mb-search:focus-within, .mb-select:focus {
+  border-color: var(--gold);
+  outline: 2px solid var(--gold-soft);
+}
+
+/* ---------- Tableau ---------- */
+.mb-table-wrap { overflow-x: auto; }
+.mb-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.mb-table thead tr { background: var(--green-deep); color: var(--cream); }
+.mb-table thead th {
+  text-align: left;
+  padding: 13px 16px;
+  font-weight: 600;
+  font-size: 13px;
+}
+.mb-table thead th:first-child { border-radius: 10px 0 0 0; }
+.mb-table thead th:last-child { border-radius: 0 10px 0 0; text-align: right; }
+.mb-table tbody td { padding: 14px 16px; border-bottom: 1px solid var(--divider, #EFE9D8); color: var(--ink); }
+.mb-table tbody tr:hover { background: var(--gold-soft); }
+.mb-table tbody td:last-child { text-align: right; }
+.mb-name { font-weight: 600; font-family: 'Amiri', serif; font-size: 15.5px; color: var(--green-deep); }
+
+.mb-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.mb-badge-category { background: var(--gold-soft); color: var(--green-deep); }
+.mb-badge-active { background: #E4F1E9; color: #1E6A45; }
+.mb-badge-inactive { background: #EEEBE3; color: var(--stone); }
+
+.mb-icon-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--border, #DDD5BC);
+  background: var(--surface, #fff);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+  cursor: pointer;
+  font-size: 13.5px;
+  color: var(--stone);
+  transition: all .15s ease;
+}
+.mb-icon-btn:hover { border-color: var(--green-deep); color: var(--green-deep); background: var(--gold-soft); }
+.mb-icon-btn.danger:hover { border-color: var(--danger); color: var(--danger); background: #FBEAE6; }
+
+/* ---------- États vides / chargement ---------- */
+.mb-state { text-align: center; padding: 60px 20px; color: var(--stone); }
+.mb-spinner {
+  width: 32px; height: 32px; margin: 0 auto 14px;
+  border: 3px solid var(--gold-soft); border-top-color: var(--gold);
+  border-radius: 50%; animation: mb-spin .8s linear infinite;
+}
+@keyframes mb-spin { to { transform: rotate(360deg); } }
+.mb-state i { font-size: 34px; color: #D8D0B8; }
+.mb-state h5 { font-family: 'Amiri', serif; color: var(--ink); margin: 12px 0 4px; }
+
+/* ---------- Modal ---------- */
+.mb-modal-backdrop {
+  position: fixed; inset: 0; background: rgba(11,61,46,.45);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px; z-index: 1000;
+}
+.mb-modal {
+  background: var(--surface, #fff);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 620px;
+  overflow: hidden;
+}
+.mb-modal-header {
+  background: linear-gradient(160deg, var(--green-deep) 0%, var(--green-mid) 100%);
+  color: var(--cream);
+  padding: 20px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mb-modal-header h5 { font-family: 'Amiri', serif; font-size: 19px; margin: 0; }
+.mb-modal-close {
+  background: transparent; border: none; color: var(--cream);
+  font-size: 20px; cursor: pointer; line-height: 1; opacity: .8;
+}
+.mb-modal-close:hover { opacity: 1; }
+.mb-modal-body { padding: 24px 26px; }
+.mb-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.mb-field { display: flex; flex-direction: column; gap: 6px; }
+.mb-field label { font-size: 13px; color: var(--stone); font-weight: 600; }
+.mb-field input, .mb-field select {
+  border: 1px solid var(--border, #DDD5BC);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  color: var(--ink);
+  background: var(--input-bg, var(--cream));
+}
+.mb-field input:focus, .mb-field select:focus {
+  outline: 2px solid var(--gold-soft);
+  border-color: var(--gold);
+}
+.mb-modal-footer {
+  padding: 18px 26px;
+  border-top: 1px solid var(--divider, #EFE9D8);
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.mb-btn-secondary {
+  background: var(--surface, #fff); border: 1px solid var(--border, #DDD5BC); color: var(--ink);
+  padding: 10px 18px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer;
+}
+.mb-btn-secondary:hover { background: #F5F2E8; }
+.mb-btn-primary {
+  background: var(--gold); border: none; color: var(--green-deep);
+  padding: 10px 18px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.mb-btn-primary:hover { background: var(--gold-light); }
+
+@media (max-width: 720px) {
+  .mb-form-grid { grid-template-columns: 1fr; }
+  .mb-hero { padding: 26px 22px; }
+}

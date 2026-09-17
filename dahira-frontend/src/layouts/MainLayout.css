@@ -1,0 +1,274 @@
+/* MainLayout.css — identité visuelle Dahira Hisnoul Abraar (vert profond / or) */
+
+:root {
+  --green-deep: #0B3D2E;
+  --green-mid: #12513D;
+  --gold: #C9A227;
+  --gold-light: #E8CE84;
+  --gold-soft: #F5E9C7;
+  --cream: #FBF8F1;
+  --ink: #1C2420;
+  --stone: #707C74;
+
+  /* surfaces & bordures — utilisées par toutes les pages */
+  --surface: #FFFFFF;
+  --border: #DDD5BC;
+  --border-strong: #E3DCC6;
+  --divider: #EFE9D8;
+  --input-bg: var(--cream);
+}
+
+/* ---------- Mode sombre ---------- */
+html[data-theme='dark'] {
+  --cream: #121C17;
+  --surface: #1B2B23;
+  --border: #2C3E34;
+  --border-strong: #2C3E34;
+  --divider: #253A2F;
+  --input-bg: #16241D;
+  --ink: #EDE8DA;
+  --stone: #93A096;
+}
+
+* { box-sizing: border-box; }
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background: var(--cream);
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  width: 250px;
+  flex: none;
+  background: linear-gradient(185deg, var(--green-deep) 0%, var(--green-mid) 100%);
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.sidebar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='90' viewBox='0 0 120 90'%3E%3Cpath d='M60 0 C60 30 30 30 30 55 C30 75 45 88 60 90 C75 88 90 75 90 55 C90 30 60 30 60 0Z' fill='none' stroke='%23E8CE84' stroke-width='1.4'/%3E%3C/svg%3E");
+  background-size: 100px 75px;
+  pointer-events: none;
+}
+
+.sidebar-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 26px 22px 22px;
+  border-bottom: 1px solid rgba(232,206,132,.16);
+}
+.logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  background: var(--gold-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  overflow: hidden;
+}
+.logo i { color: var(--green-deep); font-size: 19px; }
+.logo-img { width: 100%; height: 100%; object-fit: cover; }
+.sidebar-header h5 {
+  font-family: 'Amiri', serif;
+  font-weight: 700;
+  font-size: 17px;
+  margin: 0;
+}
+.sidebar-header small {
+  color: rgba(251,248,241,.55);
+  font-size: 11.5px;
+  letter-spacing: .3px;
+}
+
+.sidebar-menu {
+  position: relative;
+  padding: 22px 14px;
+  flex: 1;
+  overflow-y: auto;
+}
+.menu-title {
+  font-size: 11px;
+  color: rgba(251,248,241,.4);
+  margin: 0 10px 10px;
+  font-weight: 600;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+}
+
+/* ---------- Item de menu (commun admin + member) ---------- */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  margin-bottom: 3px;
+  border-radius: 8px;
+  color: rgba(251,248,241,.72);
+  text-decoration: none;
+  font-size: 14px;
+  border-left: 3px solid transparent;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.menu-item i {
+  font-size: 15.5px;
+  width: 18px;
+  text-align: center;
+  flex: none;
+}
+.menu-item:hover {
+  background: rgba(232,206,132,.08);
+  color: var(--cream);
+}
+.menu-item.active {
+  background: rgba(232,206,132,.14);
+  color: var(--gold-light);
+  border-left-color: var(--gold);
+  font-weight: 600;
+}
+
+/* ---------- Sidebar footer ---------- */
+.sidebar-footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 22px;
+  border-top: 1px solid rgba(232,206,132,.16);
+}
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--green-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: 'Amiri', serif;
+  flex: none;
+}
+.user-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.user-info strong { font-size: 13.5px; color: var(--cream); }
+.user-info small { color: rgba(251,248,241,.5); font-size: 11.5px; }
+.logout-btn {
+  background: transparent;
+  border: none;
+  color: rgba(251,248,241,.6);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  transition: color .15s ease, background .15s ease;
+}
+.logout-btn:hover {
+  color: var(--gold-light);
+  background: rgba(232,206,132,.08);
+}
+
+/* ---------- Contenu principal ---------- */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* ---------- Topbar ---------- */
+.topbar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border-strong);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: var(--green-deep);
+  cursor: pointer;
+}
+.topbar-title { flex: 1; }
+.topbar-title h6 {
+  font-family: 'Amiri', serif;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0;
+  color: var(--ink);
+}
+.topbar-title span { font-size: 12px; color: var(--stone); }
+
+.topbar-actions { display: flex; gap: 10px; }
+.icon-btn {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: var(--input-bg);
+  color: var(--green-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background .15s ease, border-color .15s ease;
+}
+.icon-btn:hover { background: var(--gold-soft); border-color: var(--gold); }
+.notification-dot {
+  position: absolute;
+  top: 8px;
+  right: 9px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 1.5px solid var(--surface);
+}
+
+/* ---------- Zone de contenu ---------- */
+.page-content {
+  padding: 28px 32px 40px;
+  flex: 1;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .sidebar {
+    position: fixed;
+    z-index: 40;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: transform .2s ease;
+    box-shadow: 0 0 40px rgba(0,0,0,.2);
+  }
+  .sidebar.open { transform: translateX(0); }
+  .mobile-menu-btn { display: block; }
+  .page-content,
+  .topbar {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .topbar { padding-top: 14px; padding-bottom: 14px; }
+}

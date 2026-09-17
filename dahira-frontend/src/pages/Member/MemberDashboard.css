@@ -1,0 +1,355 @@
+/* MemberDashboard.css — identité visuelle Dahira Hisnoul Abraar (vert profond / or) */
+
+:root {
+  --green-deep: #0B3D2E;
+  --green-mid: #12513D;
+  --gold: #C9A227;
+  --gold-light: #E8CE84;
+  --gold-soft: #F5E9C7;
+  --cream: #FBF8F1;
+  --ink: #1C2420;
+  --stone: #707C74;
+  --danger: #A3402E;
+  --success: #1E6A45;
+  --warning: #A3782E;
+}
+
+.member-dashboard-page { position: relative; padding-bottom: 20px; }
+
+/* ---------- Chargement / erreur ---------- */
+.member-loading {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--stone);
+  gap: 14px;
+}
+.member-loading .spinner-border { color: var(--gold); width: 34px; height: 34px; }
+
+.member-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: #FBEAE6;
+  color: var(--danger);
+  border: 1px solid #EBC7BC;
+  border-radius: 14px;
+  padding: 40px 24px;
+  text-align: center;
+  margin-top: 40px;
+}
+.member-error i { font-size: 30px; }
+.member-error button {
+  background: var(--green-deep);
+  color: var(--cream);
+  border: none;
+  padding: 9px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13.5px;
+  cursor: pointer;
+}
+.member-error button:hover { background: var(--green-mid); }
+
+/* ---------- En-tête ---------- */
+.member-dashboard-header {
+  position: relative;
+  background: linear-gradient(160deg, var(--green-deep) 0%, var(--green-mid) 100%);
+  color: var(--cream);
+  padding: 34px 40px;
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.member-dashboard-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .10;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='90' viewBox='0 0 120 90'%3E%3Cpath d='M60 0 C60 30 30 30 30 55 C30 75 45 88 60 90 C75 88 90 75 90 55 C90 30 60 30 60 0Z' fill='none' stroke='%23E8CE84' stroke-width='1.4'/%3E%3C/svg%3E");
+  background-size: 120px 90px;
+}
+.member-eyebrow {
+  position: relative;
+  display: inline-block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--gold-light);
+  letter-spacing: .3px;
+  margin-bottom: 6px;
+}
+.member-dashboard-header h1 {
+  position: relative;
+  font-family: 'Amiri', serif;
+  font-weight: 700;
+  font-size: 28px;
+  margin: 0 0 4px;
+  color: var(--cream);
+}
+.member-dashboard-header p {
+  position: relative;
+  margin: 0;
+  color: rgba(251,248,241,.68);
+  font-size: 14px;
+  max-width: 420px;
+}
+.member-refresh-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(251,248,241,.12);
+  color: var(--cream);
+  border: 1px solid rgba(251,248,241,.3);
+  font-weight: 600;
+  font-size: 13.5px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background .15s ease;
+}
+.member-refresh-btn:hover,
+.member-refresh-btn:focus-visible {
+  background: rgba(251,248,241,.2);
+}
+.member-refresh-btn:active {
+  background: rgba(251,248,241,.28);
+}
+.member-refresh-btn:focus-visible {
+  box-shadow: 0 0 0 2px var(--gold-light);
+}
+
+/* ---------- KPI ---------- */
+.member-dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 24px;
+}
+.member-dashboard-stat {
+  background: var(--surface, #fff);
+  border: 1px solid var(--border-strong, #E3DCC6);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.member-dashboard-stat > div:last-child { display: flex; flex-direction: column; gap: 4px; }
+.member-dashboard-stat span { font-size: 12.5px; color: var(--stone); }
+.member-dashboard-stat strong { font-family: 'Amiri', serif; font-weight: 700; font-size: 18px; color: var(--ink); }
+
+.dashboard-stat-icon {
+  width: 46px; height: 46px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex: none; font-size: 18px;
+  background: var(--gold-soft); color: var(--green-deep);
+}
+.member-dashboard-stat.paid .dashboard-stat-icon { background: rgba(30,106,69,.12); color: var(--success); }
+.member-dashboard-stat.remaining .dashboard-stat-icon { background: rgba(163,120,46,.14); color: var(--warning); }
+.member-dashboard-stat.contributions .dashboard-stat-icon { background: rgba(38,86,112,.12); color: #266570; }
+
+/* ---------- Grille principale ---------- */
+.member-dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 22px;
+  margin-bottom: 22px;
+}
+.member-dashboard-card {
+  background: var(--surface, #fff);
+  border: 1px solid var(--border-strong, #E9E4D4);
+  border-radius: 16px;
+  padding: 26px;
+}
+.member-dashboard-card.progress-card {
+  background: var(--green-deep);
+  border-color: var(--green-deep);
+  color: var(--cream);
+}
+
+.dashboard-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.dashboard-card-header h2 { font-family: 'Amiri', serif; font-weight: 700; font-size: 17px; margin: 0 0 2px; color: var(--ink); }
+.dashboard-card-header p { margin: 0; font-size: 13px; color: var(--stone); }
+.progress-card .dashboard-card-header h2 { color: var(--cream); }
+.progress-card .dashboard-card-header p { color: rgba(251,248,241,.6); }
+
+.dashboard-card-header a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--green-deep);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.dashboard-card-header a:hover { text-decoration: underline; }
+
+.progress-percentage {
+  font-family: 'Amiri', serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--gold-light);
+}
+
+.global-progress {
+  width: 100%;
+  height: 12px;
+  background: rgba(251,248,241,.14);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+.global-progress-value {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 10px;
+  transition: width .6s ease;
+}
+.progress-details { display: flex; justify-content: space-between; }
+.progress-details > div { display: flex; flex-direction: column; gap: 4px; }
+.progress-details span { font-size: 12px; color: rgba(251,248,241,.6); }
+.progress-details strong { font-family: 'Amiri', serif; font-size: 16px; color: var(--cream); }
+
+/* ---------- Répartition des statuts ---------- */
+.contribution-status-list { display: flex; flex-direction: column; gap: 4px; }
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--divider, #EFE9D8);
+}
+.status-row:last-child { border-bottom: none; }
+.status-label { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--ink); }
+.status-row strong { font-family: 'Amiri', serif; color: var(--green-deep); font-size: 15px; }
+.status-dot { width: 9px; height: 9px; border-radius: 50%; }
+.status-dot.paid { background: var(--success); }
+.status-dot.partial { background: var(--warning); }
+.status-dot.unpaid { background: var(--stone); }
+
+/* ---------- État vide ---------- */
+.dashboard-empty { text-align: center; padding: 40px 20px; color: var(--stone); }
+.dashboard-empty i { font-size: 30px; color: #D8D0B8; margin-bottom: 10px; display: block; }
+
+/* ---------- Liste des cotisations ---------- */
+.dashboard-contribution-list { display: flex; flex-direction: column; gap: 4px; }
+.dashboard-contribution-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--divider, #EFE9D8);
+  flex-wrap: wrap;
+}
+.dashboard-contribution-item:last-child { border-bottom: none; }
+.dashboard-contribution-main { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 200px; }
+.dashboard-contribution-icon {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: var(--gold-soft); color: var(--green-deep);
+  display: flex; align-items: center; justify-content: center;
+  flex: none; font-size: 15px;
+}
+.dashboard-contribution-main h3 { font-family: 'Amiri', serif; font-size: 14.5px; margin: 0 0 2px; color: var(--ink); }
+.dashboard-contribution-main span { font-size: 12.5px; color: var(--stone); }
+
+.dashboard-contribution-progress { display: flex; align-items: center; gap: 10px; width: 160px; }
+.mini-progress { flex: 1; height: 6px; background: var(--gold-soft); border-radius: 10px; overflow: hidden; }
+.mini-progress div { height: 100%; background: var(--gold); border-radius: 10px; transition: width .6s ease; }
+.dashboard-contribution-progress > span { font-size: 12px; color: var(--stone); width: 32px; text-align: right; }
+
+.dashboard-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.dashboard-status.paid { background: rgba(30,106,69,.12); color: var(--success); }
+.dashboard-status.partial { background: rgba(163,120,46,.14); color: var(--warning); }
+.dashboard-status.unpaid { background: rgba(112,124,116,.14); color: var(--stone); }
+
+/* ---------- Derniers paiements ---------- */
+.recent-payments-list { display: flex; flex-direction: column; gap: 4px; }
+.recent-payment-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--divider, #EFE9D8);
+}
+.recent-payment-item:last-child { border-bottom: none; }
+.recent-payment-icon {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(30,106,69,.1); color: var(--success);
+  display: flex; align-items: center; justify-content: center;
+  flex: none; font-size: 14px;
+}
+.recent-payment-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.recent-payment-info strong { font-family: 'Amiri', serif; font-size: 14px; color: var(--ink); }
+.recent-payment-info span { font-size: 12px; color: var(--stone); }
+.recent-payment-amount { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+.recent-payment-amount strong { font-family: 'Amiri', serif; color: var(--success); font-size: 14.5px; }
+.recent-payment-amount span { font-size: 11.5px; color: var(--stone); }
+
+/* ---------- Actions rapides ---------- */
+.member-dashboard-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 22px;
+}
+.member-dashboard-actions a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--surface, #fff);
+  border: 1px solid var(--border-strong, #E9E4D4);
+  border-radius: 14px;
+  padding: 18px 20px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color .15s ease, background .15s ease;
+}
+.member-dashboard-actions a:hover { border-color: var(--gold); background: var(--gold-soft); }
+.member-dashboard-actions a > i:first-child {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--gold-soft); color: var(--green-deep);
+  display: flex; align-items: center; justify-content: center;
+  flex: none; font-size: 17px;
+}
+.member-dashboard-actions a > div { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.member-dashboard-actions a strong { font-family: 'Amiri', serif; font-size: 14.5px; color: var(--ink); }
+.member-dashboard-actions a span { font-size: 12.5px; color: var(--stone); }
+.member-dashboard-actions a > i:last-child { color: var(--stone); font-size: 14px; }
+
+@media (max-width: 960px) {
+  .member-dashboard-stats { grid-template-columns: repeat(2, 1fr); }
+  .member-dashboard-grid { grid-template-columns: 1fr; }
+  .member-dashboard-actions { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .member-dashboard-header { padding: 26px 22px; }
+  .member-dashboard-stats { grid-template-columns: 1fr; }
+  .dashboard-contribution-progress { width: 100%; }
+}

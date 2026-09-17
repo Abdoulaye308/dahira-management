@@ -1,0 +1,217 @@
+/* Login.css — identité visuelle Dahira Hisnoul Abraar (vert profond / or) */
+
+:root {
+  --green-deep: #0B3D2E;
+  --green-mid: #12513D;
+  --gold: #C9A227;
+  --gold-light: #E8CE84;
+  --gold-soft: #F5E9C7;
+  --cream: #FBF8F1;
+  --ink: #1C2420;
+  --stone: #707C74;
+  --danger: #A3402E;
+}
+
+.login-page {
+  display: flex;
+  min-height: 100vh;
+  background: var(--cream);
+}
+
+/* ---------- Panneau de marque ---------- */
+.login-branding {
+  flex: 1 1 46%;
+  position: relative;
+  background: linear-gradient(165deg, var(--green-deep) 0%, var(--green-mid) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  overflow: hidden;
+}
+.login-branding-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: .08;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='105' viewBox='0 0 120 90'%3E%3Cpath d='M60 0 C60 30 30 30 30 55 C30 75 45 88 60 90 C75 88 90 75 90 55 C90 30 60 30 60 0Z' fill='none' stroke='%23E8CE84' stroke-width='1.4'/%3E%3C/svg%3E");
+  background-size: 130px 98px;
+}
+.login-branding-content {
+  position: relative;
+  text-align: center;
+  max-width: 380px;
+}
+.login-branding-logo {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  background: var(--gold-soft);
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.login-branding-logo img { width: 100%; height: 100%; object-fit: cover; }
+.login-branding-title {
+  font-family: 'Amiri', serif;
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--cream);
+  margin: 0 0 6px;
+}
+.login-branding-sub {
+  color: var(--gold-light);
+  font-size: 14px;
+  margin: 0;
+}
+.login-branding-swoosh { width: 200px; height: 24px; margin: 18px auto; display: block; }
+.login-branding-tagline {
+  color: rgba(251,248,241,.68);
+  font-size: 13.5px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- Panneau formulaire ---------- */
+.login-form-panel {
+  flex: 1 1 54%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--surface, #fff);
+  border: 1px solid var(--border-strong, #E9E4D4);
+  border-radius: 18px;
+  padding: 40px 36px;
+}
+
+.login-mobile-logo { display: none; }
+
+.login-title {
+  font-family: 'Amiri', serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--green-deep);
+  margin: 0 0 4px;
+  text-align: center;
+}
+.login-subtitle {
+  color: var(--stone);
+  font-size: 14px;
+  text-align: center;
+  margin: 0 0 26px;
+}
+
+/* ---------- Alerte ---------- */
+.login-alert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #FBEAE6;
+  color: var(--danger);
+  border: 1px solid #EBC7BC;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-size: 13.5px;
+}
+
+/* ---------- Champs ---------- */
+.login-field { margin-bottom: 18px; }
+.login-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--stone);
+  margin-bottom: 7px;
+}
+.login-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border, #DDD5BC);
+  border-radius: 10px;
+  padding: 11px 14px;
+  background: var(--input-bg, var(--cream));
+}
+.login-input-wrap i { color: var(--stone); font-size: 15px; }
+.login-input-wrap input {
+  border: none;
+  background: transparent;
+  outline: none;
+  flex: 1;
+  font-size: 14.5px;
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+}
+.login-input-wrap:focus-within {
+  border-color: var(--gold);
+  outline: 2px solid var(--gold-soft);
+}
+.login-toggle-password {
+  background: transparent;
+  border: none;
+  color: var(--stone);
+  cursor: pointer;
+  font-size: 15px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.login-toggle-password:hover { color: var(--green-deep); }
+.login-toggle-password:disabled { opacity: .5; cursor: not-allowed; }
+
+/* ---------- Bouton ---------- */
+.login-submit {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--gold);
+  color: var(--green-deep);
+  border: none;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 13px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background .15s ease;
+}
+.login-submit:hover:not(:disabled) { background: var(--gold-light); }
+.login-submit:disabled { opacity: .65; cursor: not-allowed; }
+.login-submit .spinner-border { color: var(--green-deep); width: 15px; height: 15px; border-width: 2px; }
+
+/* ---------- Pied ---------- */
+.login-footer {
+  text-align: center;
+  margin-top: 26px;
+  font-size: 12.5px;
+  color: var(--stone);
+}
+
+@media (max-width: 900px) {
+  .login-branding { display: none; }
+  .login-form-panel { padding: 24px 18px; }
+  .login-mobile-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+  .login-mobile-logo img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    background: var(--gold-soft);
+    object-fit: cover;
+  }
+  .login-card { border: none; padding: 8px 4px; }
+}
